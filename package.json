@@ -1,0 +1,12 @@
+{
+  "name": "talk-tailwind",
+  "version": "1.0.0",
+  "description": "What is utility-first and why is it good for you?",
+  "main": "index.js",
+  "repository": "git@github.com:pixelastic/talk-tailwind.git",
+  "author": "Pixelastic <tim@pixelastic.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "sov": "0.0.3"
+  }
+}
