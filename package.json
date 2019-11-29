@@ -1,12 +1,18 @@
 {
-  "name": "talk-tailwind",
-  "version": "1.0.0",
-  "description": "What is utility-first and why is it good for you?",
-  "main": "index.js",
-  "repository": "git@github.com:pixelastic/talk-tailwind.git",
   "author": "Pixelastic <tim@pixelastic.com>",
-  "license": "MIT",
+  "description": "What is utility-first and why is it good for you?",
   "devDependencies": {
     "sov": "0.0.3"
-  }
+  },
+  "license": "MIT",
+  "main": "index.js",
+  "name": "talk-tailwind",
+  "repository": "git@github.com:pixelastic/talk-tailwind.git",
+  "scripts": {
+    "build": "./scripts/build",
+    "build:prod": "./scripts/build-prod",
+    "cms": "./scripts/cms",
+    "serve": "./scripts/serve"
+  },
+  "version": "1.0.0"
 }
