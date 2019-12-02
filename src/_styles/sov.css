@@ -1,52 +1,43 @@
-/* BODY */
-body {
-  @apply h-100vh relative mx-auto my-0;
-  @apply bg-gray-4;
+/* Resize width automatically based on height */
+.w-device-aspect-ratio {
+  width: 100vh;
 }
 @media (device-aspect-ratio: 3/2) {
-  body {
+  .w-device-aspect-ratio {
     width: 150vh;
   }
 }
 @media (device-aspect-ratio: 4/3) {
-  body {
+  .w-device-aspect-ratio {
     width: 133vh;
   }
 }
 @media (device-aspect-ratio: 5/4) {
-  body {
+  .w-device-aspect-ratio {
     width: 125vh;
   }
 }
 @media (device-aspect-ratio: 16/9) {
-  body {
+  .w-device-aspect-ratio {
     width: 177.77vh;
   }
 }
 @media (device-aspect-ratio: 16/10) {
-  body {
+  .w-device-aspect-ratio {
     width: 160vh;
   }
 }
 
-/* SLIDES */
-.layout-slides {
-  /* @apply h-base-100vh h-crop-5; */
-  /* @apply bg-purple; */
-  /* @apply min-h-100vh w-100p; */
-  /* @apply bg-purple; */
-
-  /* @apply text-1; */
+.scroll-snap-y {
+  scroll-snap-type: y mandatory;
 }
-.slide {
-  /* @apply bg-blue; */
-  /* @apply h-100vh-5 border-b border-r border-l relative; */
+.scroll-snap-x {
+  scroll-snap-type: y mandatory;
+}
+.scroll-snap-start {
+  scroll-snap-align: start;
 }
 
-/* Part of the layout where talk information are displayed */
-.layout-details {
-  /* @apply bg- */
-}
 #details {
   /* @apply absolute pin-b pin-r pin-l h-5; */
   /* @apply bg-black grey-light; */
