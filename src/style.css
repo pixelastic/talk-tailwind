@@ -1,0 +1,8 @@
+/* Add all your @import here, before ANYTHING else */
+@import 'tailwindcss/base';
+@import '_styles/reset.css';
+
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+@import '_styles/sov.css';

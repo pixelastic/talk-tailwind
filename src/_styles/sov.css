@@ -1,0 +1,79 @@
+/* BODY */
+body {
+  @apply h-100vh relative mx-auto my-0;
+  @apply bg-gray-4;
+}
+@media (device-aspect-ratio: 3/2) {
+  body {
+    width: 150vh;
+  }
+}
+@media (device-aspect-ratio: 4/3) {
+  body {
+    width: 133vh;
+  }
+}
+@media (device-aspect-ratio: 5/4) {
+  body {
+    width: 125vh;
+  }
+}
+@media (device-aspect-ratio: 16/9) {
+  body {
+    width: 177.77vh;
+  }
+}
+@media (device-aspect-ratio: 16/10) {
+  body {
+    width: 160vh;
+  }
+}
+
+/* SLIDES */
+.layout-slides {
+  /* @apply h-base-100vh h-crop-5; */
+  /* @apply bg-purple; */
+  /* @apply min-h-100vh w-100p; */
+  /* @apply bg-purple; */
+
+  /* @apply text-1; */
+}
+.slide {
+  /* @apply bg-blue; */
+  /* @apply h-100vh-5 border-b border-r border-l relative; */
+}
+
+/* Part of the layout where talk information are displayed */
+.layout-details {
+  /* @apply bg- */
+}
+#details {
+  /* @apply absolute pin-b pin-r pin-l h-5; */
+  /* @apply bg-black grey-light; */
+  /* @apply flex flrnw; */
+  /* @apply pb-1 pr-2 pl-1; */
+}
+/* .details-title { */
+/*   @apply fla flcnw flccv; */
+/*   @apply text--1 white-70 amaranth no-underline; */
+/*   &:hover { */
+/*     @apply underline; */
+/*   } */
+/* } */
+/* .details-speaker { */
+/*   @apply fln flcnw; */
+/*   @apply text--2 px-2 text-right; */
+/* } */
+/* .details-speaker-name { */
+/*   @apply fla; */
+/*   @apply pt-1; */
+/* } */
+/* .details-speaker-twitter { */
+/*   @apply fla; */
+/* } */
+
+/* /1* Custom notes that can be displayed if needed *1/ */
+/* .notes { */
+/*   @apply absolute pin-b pin-r p-3 hidden; */
+/*   @apply bg-black-90 text-1 font-normal white tshadow-black rounded-tl-1; */
+/* } */
