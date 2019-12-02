@@ -1,5 +1,3 @@
-include /_includes/mixins.pug
-
 block config
   //- Empty on purpose so each page can update its variables
 
@@ -28,7 +26,7 @@ html(lang='en')
     script!=tweaks.ensureUrlTrailingSlashSource
     link(rel="shortcut icon", href=`./favicon.png`)
     link(type="text/css", rel="stylesheet", href=revv(`${url.pathToRoot}style.css`))
-    body.bg-gray-4
+    body
       block content
       each jsFile in runtime.jsFiles
         script(src=`${url.pathToRoot}${jsFile}`)
