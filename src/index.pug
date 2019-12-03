@@ -15,3 +15,117 @@ block slides
   +slide.bg-black.white
     p This is your laste slide
 
+  //
+  // Intro
+  // - REX Utility first.
+  // - Was skeptical 2 years ago but tried
+  // - Still using it today, so let's see what it is and why it's good
+  //
+  // - Example
+  // - BEM on one side. One semantic class, and CSS to style it
+  // - Tailwind on other side. Lots of classes in HTML, each doing one thing
+  //
+  // - But it's inline styles!
+  // - What is wrong with inline styles?
+  // - Too specific. Highest specificity, can't be overwritten
+  // - It's classes, easy to overwrite if needed
+  // - You can put anything. Bad values, no reusaility
+  // - You have a limited set of classes, that you can re-use
+  //
+  // - Deux aspects important
+  // - API de classes dispos. On reviendra sur les avantages
+  // - HTML is first class citizen
+  //
+  // Separation of concerns!
+  // - You put your CSS in my HTML. You're breaking the separation of concerns
+
+  // - You call it separation of concerns, I call it level of indirection
+  // - Two sides of the same coin
+
+  // - Oui c'est bien de pouvoir se concentrer sur un seul coté à la fois
+  // - Mais séparer en deux fichiers n'est pas une séparation of concerns
+  // - HTML est CSS fonctionnent ensemble
+  // - Separation of concerns is not separation of file types
+  //
+  // - The CSS Zen Garden Phalacy
+  // - I could rebrand the whole website just by changing the CSS
+  // - Yes you can. But it's a hack. An exercise in futility (and I love them)
+  // - But not the fastest, easiest way
+  // - We always add wrapper divs, or separation when building a design
+  //
+  // - Example of highly expressive classes in HTML
+  // - Better that way. I can picture in my head what it does
+  // - Remove the level of indirection, merge both, so you can see what it does
+  //
+  //
+  // But you're not using the Cascade of CSS...
+  // - No I'm not, it's true
+  // - I prefer Compositing Style Sheets
+  // - You add small classes and add them to each other, instead of creating an
+  // inheritance tree
+  // - It's much easier to reason about, and much more re-usable
+  // 
+  // Such a joy to come to old projects
+  // - The "click" for me was when I came back to a project 6 months later
+  // - I could just read the HTML and understand what it looked like
+  // - It was then easy to edit the code
+  // - This was when I was convinced. Not when I initially wrote it
+  // - It was less ugly than I initially imagined, but I still wasn't convinced
+  //
+  // One API to rule them all
+  // - We now have a large, but limited number of classes available
+  // - They form our new language, our new API on top of CSS
+  //
+  // - Gives on single source of truth
+  // - .text-1, text-2, bg-blue-1, bg-blue-2 limits the number of options
+  // - new members, non-designers have less to think about. It's too small?
+  // increase it. Too big, decrease it. Without knowing the exact value of each
+  // - You can't mess up, you still have something consistant, following your
+  // styleguide (or kinda acts as a styleguide if you don't have one)
+  //
+  // Simpler API for CSS
+  // - .italic, .bold, .underline instead of remembering font-weight;
+  // font-style, font-xxx, Same for text wrap
+  // - Still veyr close to CSS concepts, no abstraction like .container/.row
+  // like bootstrap
+  // - What you learn with this, you can reuse to write CSS
+  //
+  // You can still write CSS
+  // - New CSS is the exception, not the norm
+  // - But you can write more complex interaction in CSS
+  // - As it's only .classname, it's easy to override
+  //
+  // Tailwind specifically
+  // - Tachyons pioneered this approach, and then came Tailwind
+  // - I would suggest Tailwind today as superior
+  // - Tachyons was great but: Used SCSS (VS postCSS), Opinionated (sane default
+  // + extensible), no search in doc (great doc with videos), composition in
+  // template (VS @apply)
+  //
+  // @apply
+  // - When you need to group styles together, like for a button
+  // - .button { @apply bg-red p-2 white rounded }
+  //
+  // Other Tailwind goodies
+  // - RWD prefixed, and hover variants
+  //
+  // Configuration as code
+  // - Tailwind config is JS/JSON files and then generated, not CSS classes
+  // - Great plugin system to add your own
+  // - Nice default values, lots of example on how to update them
+  //
+  // Performance
+  // - Faster parsing by browsers as the matching is very quick
+  // - Does it have this class or not?
+  //
+  // - Merge classes with @apply to avoid duplicating classes too often
+  //
+  // - To be used with purgeCSS in production
+  // - Removes all unused classes from the final CSS, making it a small file
+  // - You remove the HTML and you have no dead code
+  //
+  // - And GZip is very good at zipping repeated content, better than unique
+  // classe names
+  //
+  //
+
