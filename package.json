@@ -1,11 +1,13 @@
 {
   "author": "Pixelastic <tim@pixelastic.com>",
-  "dependencies": {},
+  "dependencies": {
+    "highlight.js": "9.16.2"
+  },
   "description": "What is utility-first and why is it good for you?",
   "devDependencies": {
     "aberlaas": "0.10.2",
     "golgoth": "0.6.2",
-    "sov": "0.0.5"
+    "sov": "0.0.8"
   },
   "files": [
     "build/"

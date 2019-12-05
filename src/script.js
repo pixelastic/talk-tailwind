@@ -1,2 +1,2 @@
-// Insert your JavaScript here
-console.info('norksa loaded');
+import sov from 'sov/build/frontend';
+sov.init();

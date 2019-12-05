@@ -3,3 +3,12 @@
 @import 'tailwindcss/components';
 @import 'tailwindcss/utilities';
 @import 'sov/style';
+
+.js-loaded {
+  .slide {
+    @apply hidden;
+  }
+  .js-slide-current {
+    @apply block;
+  }
+}

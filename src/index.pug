@@ -1,25 +1,58 @@
 extends /_includes/_layouts/sov
 
 block config
-  - pageTitle = "Your presentation title"
-  - pageDescription = "Your presentation description"
-  - pageTwitter = "Your Twitter handle"
-  - pageAuthor = "Your name"
-  - pageUrl = "Your url"
+  - pageTitle = "Tailwind and Utility-first CSS: 3 years later"
+  - pageDescription = "I discovered and tried Utility-first CSS 3 years ago. Here is what I learned from it."
+  - pageTwitter = "pixelastic"
+  - pageAuthor = "Tim Carry"
+  - pageUrl = "https://talks.pixelastic.com/slides/pariscss-2019-11/"
 
 block slides
-  +slide.bg-blue
-    p This is your first slide
-  +slide.bg-green
-    p This is your second slide
-  +slide.bg-black.white
-    p This is your laste slide
-
-  //
-  // Intro
+  +slide.bg-green.text-6
+    .fla.flcnw.flc.white.text-shadow
+      .fln Tailwind and Utility-first CSS:
+      .fln 3 years later
   // - REX Utility first.
   // - Was skeptical 2 years ago but tried
   // - Still using it today, so let's see what it is and why it's good
+  +slide.px-1
+    .text-3.green.bold.fln So, what does it look like?
+    .fla.flrnw
+      .fln.w-50p.border-gray-4.border-r-001
+        .bg-gray-9.p-01.white.whitespace-pre.text-1
+          pre
+            code
+              |&lt;div class="user">
+              |    &lt;img src="…" class="user__picture" />
+              |    &lt;ul class="user__detailList">
+              |      &lt;li class="user__detail">
+              |        Tim Carry
+              |      &lt;/li>
+              |      &lt;li class="user__detail">
+              |        @pixelastic
+              |      &lt;/li>
+              |      &lt;li class="user__detail user__detail--disabled">
+              |        None
+              |      &lt;/li>
+              |    &lt;/ul>
+              |&lt;/div>
+
+      .fln.w-50p Utility
+    
+  +slide.bg-black.white
+    p.text-1 Normal line
+    p.text-2 Slightly more
+    p.text-3 Top title
+    p.text-4 A bit more
+    p.text-5 Large text
+    p.text-6 Even more
+    p.text-7 Main title
+    p.text-8 Even more
+    p.text-9 Mega
+    p.text-10 Giga
+
+  //
+  // Intro
   //
   // - Example
   // - BEM on one side. One semantic class, and CSS to style it
