@@ -8,157 +8,258 @@ block config
   - pageUrl = "https://talks.pixelastic.com/slides/pariscss-2019-11/"
 
 block slides
-  +slide.bg-green.text-6
-    .fla.flcnw.flc.white.text-shadow
-      .fln Tailwind and Utility-first CSS:
-      .fln 3 years later
-  // - REX Utility first.
-  // - Was skeptical 2 years ago but tried
-  // - Still using it today, so let's see what it is and why it's good
-  +slide.px-1
-    .text-3.green.bold.fln So, what does it look like?
-    .fla.flrnw
-      .fln.w-50p.border-gray-4.border-r-001
-        .bg-gray-9.p-01.white.whitespace-pre.text-1
-          pre
-            code
-              |&lt;div class="user">
-              |    &lt;img src="…" class="user__picture" />
-              |    &lt;ul class="user__detailList">
-              |      &lt;li class="user__detail">
-              |        Tim Carry
-              |      &lt;/li>
-              |      &lt;li class="user__detail">
-              |        @pixelastic
-              |      &lt;/li>
-              |      &lt;li class="user__detail user__detail--disabled">
-              |        None
-              |      &lt;/li>
-              |    &lt;/ul>
-              |&lt;/div>
+  +slide.bg-green.text-7
+    .fla.flcnw.flc.white.text-shadow.amaranth.bold
+      .fln Utility-first CSS:
+      .fln.italic 3 years later
+    .notes
 
-      .fln.w-50p Utility
+  +slide.bg-gray-9
+    +title Styling: BEM
+    .fla.flcnw.flccv.ml-3
+      .codeblock.fln.text-1
+        |&lt;div class="user">
+        |    &lt;img src="…" class="user__picture" />
+        |    &lt;ul class="user__detailList">
+        |      &lt;li class="user__detail">
+        |        Tim Carry
+        |      &lt;/li>
+        |      &lt;li class="user__detail">
+        |        @pixelastic
+        |      &lt;/li>
+        |      &lt;li class="user__detail user__detail--disabled">
+        |        None
+        |      &lt;/li>
+        |    &lt;/ul>
+        |&lt;/div>
+
+
+  include /_includes/_slides/utility.pug
+
+  +slide.px-1.bg-red-9
+    .fla.flcnw.flc.text-8.amaranth.white.text-shadow
+      div 😱 
+      div Inline Styles!
+
+  +slide
+    .fla.flcnw
+      .fla.flcnw.bg-red-2
+        .fla.flcnw.flc.bg-gray-9
+          .codeblock.p-4.text-3.text-center
+            |&lt;div style="background-color: #badc07; font-size: 15px;">
+        .fla.flcnw.flccv.ml-5.my-3.text-4
+          .fln.bullet.bullet-cross.bullet-red Anyone can put anything in it
+          .fln.bullet.bullet-cross.bullet-red Can only be overriden by #[code.code !important]
+      .fla.flcnw.bg-green-2(data-step)
+        .fla.flcnw.flc.bg-gray-9
+          .codeblock.p-4.text-3.text-center
+            |&lt;div style="bg-blue text-1">
+        .fla.flcnw.flccv.ml-5.my-3.text-4
+          .fln.bullet.bullet-tick.bullet-green Limited to a controlled API
+          .fln.bullet.bullet-tick.bullet-green As it's only a #[code.code .class], easy to override
+
+  +slide.px-1.bg-red-9
+    .fla.flcnw.flc.text-7.amaranth.white.text-shadow
+      .text-8 😱 
+      div Separation of Concerns!
+    ul.notes
+      li You put your CSS in my HTML. You're breaking the separation of concerns
+
+
+  +slide.bg-green
+    .fla.flcnw.flc
+      .flcnw.text-7.amaranth.white.text-shadow
+        .fla Separation of #[.inline.yellow Concerns]
+        .fla.text-center.bold ≠
+        .fla Separation of #[.inline.red Filetypes]
+
+  +slide
+    +title HTML and CSS work together
+    .fla.flcnw.flc
+      .fln.flcnw.w-80p
+        .fln.flrnw.border-001.border-gray
+          .fln.flcnw.flc.w-20p.p-3
+            img.h-14(src='./assets/images/html.png')
+          .fln.flcnw.flc.w-20p.border-r-001.p-3.border-gray
+            img.h-14.opacity-25p(src='./assets/images/css.png')
+          .fla.text-7.red-5.flcnw.flc.amaranth.text-shadow Unusable
+        .fln.flrnw.border-001.border-t-0.border-gray
+          .fln.flcnw.flc.w-20p.p-3
+            img.h-14.opacity-25p(src='./assets/images/html.png')
+          .fln.flcnw.flc.w-20p.p-3.border-r-001.border-gray
+            img.h-14(src='./assets/images/css.png')
+          .fla.text-7.red-5.flcnw.flc.amaranth.text-shadow Useless
+
+
+  // +slide.bg-gray-9
+  //   +title Two sides of the same coin
+  //   .fla.flcnw.flc
+  //     .__coin.amaranth.text-center(style="--edge-size: 2rem; --coin-diameter: 36rem; --turn-time: 6s")
+  //       .__coin-face.__coin-front.bg-yellow.flcnw.h-100p.flc
+  //         .absolute.fill-current.h-60p.w-60p.yellow-8
+  //           include /_includes/_icons/separationOfConcerns.svg
+  //         .white.z-1.text-shadow.text-5 Separation of Concerns
+  //       .__coin-edge
+  //         - for (var edgeCount = 0; edgeCount < 80; edgeCount ++) {
+  //           div.bg-yellow-8(style=`--edge-index: ${edgeCount}`)
+  //         - }
+  //       .__coin-face.__coin-back.bg-yellow.flcnw.h-100p.flc
+  //         .absolute.fill-current.h-60p.w-60p.yellow-8
+  //           include /_includes/_icons/levelOfIndirection.svg
+  //         .white.z-1.text-shadow.text-6 Level of Indirection
+
+  +slide
+    +title Reduced Context-Switching
+    .fla.flcnw.flc 
+      .fln.flrnw.flspa.amaranth.w-100p
+        .fla.flc.flcnw.mx-5
+          img.h-18(src='./assets/images/html.png')
+          .text-6 HTML
+        .fla.flc.flcnw.mx-5
+          img.h-18(src='./assets/images/css.png')
+          .text-6 CSS
+        .fla.flc.flcnw.mx-5
+          img.h-18(src='./assets/images/browsers.png')
+          .text-6 Browser
+
+  include /_includes/_slides/utility.pug
+
+  // +slide
+  //   +title The CSS ZenGarden Phallacy
+  //   .fla.flcnw.flc 
+  //     .fln Not because you can mean you should
+  //     .fln Believe me, I know
+  //   .notes
+  //     li rebranding the whole wbeiste just by changing the CSS
+  //     li never happens in real life
+  //     li slow, too complex
+  //     li we always add wrapper divs or rewrite markup
+
+
+  +slide.px-1.bg-red-9
+    .fla.flcnw.flc.text-7.amaranth.white.text-shadow
+      .text-8 😱 
+      div It's not cascading!
+
+  +slide.bg-green
+    .fla.flcnw.flc
+      .fln.amaranth.text-shadow.text-8.white.lh-1
+        .fln #[.inline.orange.bold C]ompositing
+        .fln #[.inline.orange.bold S]tyle 
+        .fln #[.inline.orange.bold S]heets
+    .notes
+      div Composition Over Inheritance
+      div Small classes that do one thing
+      div Use several of them
+
+
+  +slide
+    +title Your styleguide as an API
+    .fla.flc.flcnw
+      .fln.flcnw.text-5
+        .bullet.bullet-tick.bullet-green Combine classes like Lego Blocks
+        .bullet.bullet-tick.bullet-green Consistant spacing, colors and font size
+        .bullet.bullet-tick.bullet-green Can only use what's defined
+        .bullet.bullet-tick.bullet-green Easier to do it right™
+
+  +slide.px-1.bg-red-9
+    .fla.flcnw.flc.text-7.amaranth.white.text-shadow
+      div 😱 
+      div That's a lot of repetition
+
+  +slide
+    .fla.flcnw.flspb.my-2
+      .fln
+        +title Abstraction with a template
+        .codeblock.p-2
+          |&lt;!-- index.html -->
+          |&lt;Button cssClasses="ml-3" label="Click Me" />
+          |&lt;!-- button.tpl -->
+          |&lt;button class="p-1 rounded shadow-1 bg-gray white ${cssClasses}">${label}&lt;/button>
+      .fln
+        +title Abstraction with #[code.code @apply]
+        .codeblock.pt-2.px-2
+          |&lt;!-- index.html -->
+          |&lt;button class="button ml-3">Click Me!&lt;/button>
+          |&lt;!-- style.css -->
+        .codeblock.pb-2.px-2.language-css
+          |.button {
+          |  @apply p-1 rounded shadow-1 bg-gray white;
+          |}
+
+  +slide.px-1.bg-red-9
+    .fla.flcnw.flc.text-7.amaranth.white.text-shadow
+      div 😱 
+      div What about RWD?
+
+  +slide
+    .fln RWD
+    .fln prefix classes
+    .fln mobile-first
+    .fln also for hover
+
+  +slide.px-1.bg-red-9
+    .fla.flcnw.flc.text-7.amaranth.white.text-shadow
+      div 😱 
+      div But it's slower!
+
+  +slide
+    .fln Actually having single class is faster to parse than specific BEM selectors
+    .fln But that's such a tiny difference that it's not even the point
+    .fln @apply allow to group commonly used elements together
+    .fln Gzip/Brotli compression compress this repetition really well
+    .fln purgeCSS allows to slim down the unused classes
+
+  +slide.px-1.bg-green-9
+    .fla.flcnw.flc.text-7.amaranth.white.text-shadow
+      div :)
+      div Ok I'm convinced!
+
+
+  +slide
+    +title Two frameworks: Tachyons and Tailwind
+    .fla.flcnw.flc.p-2
+      .fln.flcnw.w-100p.border-r-001.border-b-001.border-gray
+        .fln.flrnw.border-b-001.border-gray
+          .fln.p-3.w-33p  
+          .fln.p-3.w-33p.border-l-001.border-t-001.border-gray.bold.text-center Tachyons
+          .fln.p-3.w-33p.border-l-001.border-t-001.border-gray.bold.text-center Tailwind
+        .fln.flrnw.border-b-001.border-gray
+          .fln.p-3.w-33p.bg-gray.bold.gray-1 Tooling
+          .fln.p-3.w-33p.border-l-001.border-gray.bullet.bullet-cross.bullet-red SCSS
+          .fln.p-3.w-33p.border-l-001.border-gray.bullet.bullet-tick.bullet-green postCSS
+        .fln.flrnw.border-b-001.border-gray
+          .fln.p-3.w-33p.bg-gray.bold.gray-1 Defaults
+          .fln.p-3.w-33p.border-l-001.border-gray.bullet.bullet-cross.bullet-red Opinionated
+          .fln.p-3.w-33p.border-l-001.border-gray.bullet.bullet-tick.bullet-green Extensible
+        .fln.flrnw.border-b-001.border-gray
+          .fln.p-3.w-33p.bg-gray.bold.gray-1 Documentation
+          .fln.p-3.w-33p.border-l-001.border-gray.bullet.bullet-cross.bullet-red No Search
+          .fln.p-3.w-33p.border-l-001.border-gray.bullet.bullet-tick.bullet-green Screencasts, examples
+        .fln.flrnw.border-b-001.border-gray
+          .fln.p-3.w-33p.bg-gray.bold.gray-1 Community
+          .fln.p-3.w-33p.border-l-001.border-gray.bullet.bullet-cross.bullet-red ?
+          .fln.p-3.w-33p.border-l-001.border-gray.bullet.bullet-tick.bullet-green Laravel/Vue.js
+        .fln.flrnw
+          .fln.p-3.w-33p.bg-gray.bold.gray-1 Composition
+          .fln.p-3.w-33p.border-l-001.border-gray.bullet.bullet-cross.bullet-red HTML Templating
+          .fln.p-3.w-33p.border-l-001.border-gray.bullet.bullet-tick.bullet-green #[code.code @apply]
+
+  +slide
+    +title Normalized CSS API
+    .fln
+      .fln Give a list of class examples, that might be hard to remember how to use
+      .fln Whitespace, italic, uppercase, etc
+    .notes
+      div Still CSS Concepts, reusable
+
+  +slide
+    .fln Configuration as code
+    .fln All config is in a JS/JSON file, you can commit it and regenerate
+    .fln Plugin system, shareable configs
+    .fln Documentation really focuses on updating the values
+
+
     
-  +slide.bg-black.white
-    p.text-1 Normal line
-    p.text-2 Slightly more
-    p.text-3 Top title
-    p.text-4 A bit more
-    p.text-5 Large text
-    p.text-6 Even more
-    p.text-7 Main title
-    p.text-8 Even more
-    p.text-9 Mega
-    p.text-10 Giga
-
-  //
-  // Intro
-  //
-  // - Example
-  // - BEM on one side. One semantic class, and CSS to style it
-  // - Tailwind on other side. Lots of classes in HTML, each doing one thing
-  //
-  // - But it's inline styles!
-  // - What is wrong with inline styles?
-  // - Too specific. Highest specificity, can't be overwritten
-  // - It's classes, easy to overwrite if needed
-  // - You can put anything. Bad values, no reusaility
-  // - You have a limited set of classes, that you can re-use
-  //
-  // - Deux aspects important
-  // - API de classes dispos. On reviendra sur les avantages
-  // - HTML is first class citizen
-  //
-  // Separation of concerns!
-  // - You put your CSS in my HTML. You're breaking the separation of concerns
-
-  // - You call it separation of concerns, I call it level of indirection
-  // - Two sides of the same coin
-
-  // - Oui c'est bien de pouvoir se concentrer sur un seul coté à la fois
-  // - Mais séparer en deux fichiers n'est pas une séparation of concerns
-  // - HTML est CSS fonctionnent ensemble
-  // - Separation of concerns is not separation of file types
-  //
-  // - The CSS Zen Garden Phalacy
-  // - I could rebrand the whole website just by changing the CSS
-  // - Yes you can. But it's a hack. An exercise in futility (and I love them)
-  // - But not the fastest, easiest way
-  // - We always add wrapper divs, or separation when building a design
-  //
-  // - Example of highly expressive classes in HTML
-  // - Better that way. I can picture in my head what it does
-  // - Remove the level of indirection, merge both, so you can see what it does
-  //
-  //
-  // But you're not using the Cascade of CSS...
-  // - No I'm not, it's true
-  // - I prefer Compositing Style Sheets
-  // - You add small classes and add them to each other, instead of creating an
-  // inheritance tree
-  // - It's much easier to reason about, and much more re-usable
-  // 
-  // Such a joy to come to old projects
-  // - The "click" for me was when I came back to a project 6 months later
-  // - I could just read the HTML and understand what it looked like
-  // - It was then easy to edit the code
-  // - This was when I was convinced. Not when I initially wrote it
-  // - It was less ugly than I initially imagined, but I still wasn't convinced
-  //
-  // One API to rule them all
-  // - We now have a large, but limited number of classes available
-  // - They form our new language, our new API on top of CSS
-  //
-  // - Gives on single source of truth
-  // - .text-1, text-2, bg-blue-1, bg-blue-2 limits the number of options
-  // - new members, non-designers have less to think about. It's too small?
-  // increase it. Too big, decrease it. Without knowing the exact value of each
-  // - You can't mess up, you still have something consistant, following your
-  // styleguide (or kinda acts as a styleguide if you don't have one)
-  //
-  // Simpler API for CSS
-  // - .italic, .bold, .underline instead of remembering font-weight;
-  // font-style, font-xxx, Same for text wrap
-  // - Still veyr close to CSS concepts, no abstraction like .container/.row
-  // like bootstrap
-  // - What you learn with this, you can reuse to write CSS
-  //
-  // You can still write CSS
-  // - New CSS is the exception, not the norm
-  // - But you can write more complex interaction in CSS
-  // - As it's only .classname, it's easy to override
-  //
-  // Tailwind specifically
-  // - Tachyons pioneered this approach, and then came Tailwind
-  // - I would suggest Tailwind today as superior
-  // - Tachyons was great but: Used SCSS (VS postCSS), Opinionated (sane default
-  // + extensible), no search in doc (great doc with videos), composition in
-  // template (VS @apply)
-  //
-  // @apply
-  // - When you need to group styles together, like for a button
-  // - .button { @apply bg-red p-2 white rounded }
-  //
-  // Other Tailwind goodies
-  // - RWD prefixed, and hover variants
-  //
-  // Configuration as code
-  // - Tailwind config is JS/JSON files and then generated, not CSS classes
-  // - Great plugin system to add your own
-  // - Nice default values, lots of example on how to update them
-  //
-  // Performance
-  // - Faster parsing by browsers as the matching is very quick
-  // - Does it have this class or not?
-  //
-  // - Merge classes with @apply to avoid duplicating classes too often
-  //
-  // - To be used with purgeCSS in production
-  // - Removes all unused classes from the final CSS, making it a small file
-  // - You remove the HTML and you have no dead code
-  //
-  // - And GZip is very good at zipping repeated content, better than unique
-  // classe names
-  //
-  //
+  // - Maintenability: You remove the HTML and you have no dead code
 

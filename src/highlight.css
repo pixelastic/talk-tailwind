@@ -1,0 +1,28 @@
+.codeblock {
+  @apply block whitespace-pre;
+  @apply bg-gray-9 white;
+}
+.code {
+  @apply bg-gray-9 p-02 red-5;
+}
+
+.js-codeblock {
+  .hljs-tag {
+    @apply green-6;
+  }
+  .hljs-attr {
+    @apply red-5;
+  }
+  .hljs-string {
+    @apply blue-5;
+  }
+  .hljs-comment {
+    @apply gray;
+  }
+  &.language-css,
+  &.css {
+    .hljs-selector-class {
+      @apply green-3;
+    }
+  }
+}

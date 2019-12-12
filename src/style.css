@@ -4,11 +4,87 @@
 @import 'tailwindcss/utilities';
 @import 'sov/style';
 
-.js-loaded {
-  .slide {
-    @apply hidden;
+@import './highlight.css';
+@import './sov.css';
+
+@keyframes rotate3d {
+  0% {
+    transform: perspective(100vh) rotateY(0deg);
   }
-  .js-slide-current {
-    @apply block;
+
+  100% {
+    transform: perspective(100vh) rotateY(360deg);
+  }
+}
+
+@keyframes shine {
+  0% {
+    transform: translateY(calc(var(--coin-diameter) * 2)) rotate(-40deg);
+  }
+  50% {
+    transform: translateY(calc(var(--coin-diameter) * -1)) rotate(-40deg);
+  }
+}
+
+.__coin {
+  --coin-diameter: 300px;
+  --edge-size: 20px;
+  --turn-time: 10s;
+  --edge-faces: 80; /* The more we add, the smoother it is */
+
+  @apply relative;
+
+  width: var(--coin-diameter);
+  height: var(--coin-diameter);
+  transform-style: preserve-3d;
+  animation: rotate3d var(--turn-time) linear infinite;
+  transition: all 0.3s;
+  .__coin-face {
+    @apply absolute rounded-full overflow-hidden w-100p h-100p;
+
+    &:after {
+      content: '';
+      @apply absolute block bg-white bg-opacity-3;
+      left: -50%;
+      bottom: 100%;
+      height: 33%;
+      width: 200%;
+      animation: shine calc(var(--turn-time) / 2)
+        cubic-bezier(0.39, 0.58, 0.57, 1) infinite;
+    }
+  }
+  .__coin-front {
+    transform: translateZ(calc(var(--edge-size) / 2));
+  }
+  .__coin-back {
+    transform: translateZ(calc(var(--edge-size) / -2)) rotateY(180deg);
+  }
+  .__coin-edge {
+    div {
+      position: absolute;
+      height: calc(3.14 * var(--coin-diameter) / var(--edge-faces));
+      width: var(--edge-size);
+      transform: translateY(
+          calc(
+            var(--coin-diameter) / 2 - 3.14 * var(--coin-diameter) /
+              var(--edge-faces) / 2
+          )
+        )
+        translateX(calc(var(--coin-diameter) / 2 - var(--edge-size) / 2))
+        rotateZ(calc(360deg / var(--edge-faces) * var(--edge-index)))
+        rotateZ(90deg) translateX(calc(var(--coin-diameter) / 2)) rotateY(90deg);
+      &:after {
+        content: '';
+        @apply absolute top-0 left-0 w-100p h-100p bg-white;
+        opacity: calc(var(--edge-index) / var(--edge-faces));
+      }
+    }
+
+    /*   rotateZ(calc(360deg / var(--edge-faces) * var(--edgeCount) + 90deg)) */
+    /* ); */
+
+    /* translateX(calc(var(--coin-diameter) / 2 - var(--coin-thickness) / 2)) */
+    /* rotateZ(calc(360deg / var(--edge-faces) * var(--edgeCount) + 90)) */
+    /* translateX(calc(var(--coin-diameter) / 2)) rotateY(90deg); */
   }
 }
