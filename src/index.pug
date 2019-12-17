@@ -5,7 +5,7 @@ block config
   - pageDescription = "I discovered and tried Utility-first CSS 3 years ago. Here is what I learned from it."
   - pageTwitter = "pixelastic"
   - pageAuthor = "Tim Carry"
-  - pageUrl = "https://talks.pixelastic.com/slides/pariscss-2019-11/"
+  - pageUrl = "https://talks.pixelastic.com/slides/cssparis-2019-12/"
 
 block slides
   +slide.bg-green.text-7
@@ -168,24 +168,24 @@ block slides
           |  @apply border-blue rounded shadow-1;
           |}
 
-  // +slide.px-1.bg-red-9
-  //   .fla.flcnw.flc.text-8.amaranth.white.text-shadow
-  //     .text-8 😱 
-  //     div Responsive!
+  //- +slide.px-1.bg-red-9
+  //-   .fla.flcnw.flc.text-8.amaranth.white.text-shadow
+  //-     .text-8 😱 
+  //-     div Responsive!
 
 
-  // +slide
-  //   +title Using #[code.code.lh-1 @screen] and #[code.code.lh-1 @apply]
-  //   .fla.flcnw.flccv.bg-gray-9
-  //     .codeblock.language-css.p-3.text-3.bg-opacity-0
-  //       |@screen lg {
-  //       |    section {
-  //       |        @apply flex-row;
-  //       |    }
-  //       |    nav {
-  //       |        @apply pb-0 pl-3;
-  //       |    }
-  //       |}
+  //- +slide
+  //-   +title Using #[code.code.lh-1 @screen] and #[code.code.lh-1 @apply]
+  //-   .fla.flcnw.flccv.bg-gray-9
+  //-     .codeblock.language-css.p-3.text-3.bg-opacity-0
+  //-       |@screen lg {
+  //-       |    section {
+  //-       |        @apply flex-row;
+  //-       |    }
+  //-       |    nav {
+  //-       |        @apply pb-0 pl-3;
+  //-       |    }
+  //-       |}
 
 
   +slide.px-1.bg-red-9
@@ -213,33 +213,33 @@ block slides
       .fln.w-100p
         include /_includes/_icons/tailwind.svg
 
-    // +title #[.inline.strike.gray Two] One framework#[.inline.strike.gray s]: #[.inline.strike.gray Tachyons and] TailwindCSS
-    // .fla.flcnw.flc.p-2
-    //   .fln.flcnw.w-100p.border-r-001.border-b-001.border-gray
-    //     .fln.flrnw.border-b-001.border-gray
-    //       .fln.p-3.w-33p  
-    //       .fln.p-3.w-33p.border-l-001.border-t-001.border-gray.bold.text-center.opacity-50p Tachyons
-    //       .fln.p-3.w-33p.border-l-001.border-t-001.border-gray.bold.text-center TailwindCSS
-    //     .fln.flrnw.border-b-001.border-gray
-    //       .fln.p-3.w-33p.bg-gray.bold.gray-1 Tooling
-    //       .fln.p-3.w-33p.border-l-001.border-gray.bullet.bullet-cross.bullet-red.opacity-50p SCSS
-    //       .fln.p-3.w-33p.border-l-001.border-gray.bullet.bullet-tick.bullet-green postCSS
-    //     .fln.flrnw.border-b-001.border-gray
-    //       .fln.p-3.w-33p.bg-gray.bold.gray-1 Composition
-    //       .fln.p-3.w-33p.border-l-001.border-gray.bullet.bullet-cross.bullet-red.opacity-50p HTML Templating
-    //       .fln.p-3.w-33p.border-l-001.border-gray.bullet.bullet-tick.bullet-green #[code.code @apply]
-    //     .fln.flrnw.border-b-001.border-gray
-    //       .fln.p-3.w-33p.bg-gray.bold.gray-1 Defaults
-    //       .fln.p-3.w-33p.border-l-001.border-gray.bullet.bullet-cross.bullet-red.opacity-50p Opinionated
-    //       .fln.p-3.w-33p.border-l-001.border-gray.bullet.bullet-tick.bullet-green Extensible
-    //     .fln.flrnw.border-b-001.border-gray
-    //       .fln.p-3.w-33p.bg-gray.bold.gray-1 Documentation
-    //       .fln.p-3.w-33p.border-l-001.border-gray.bullet.bullet-cross.bullet-red.opacity-50p No Search
-    //       .fln.p-3.w-33p.border-l-001.border-gray.bullet.bullet-tick.bullet-green Screencasts, examples
-    //     .fln.flrnw
-    //       .fln.p-3.w-33p.bg-gray.bold.gray-1 Community
-    //       .fln.p-3.w-33p.border-l-001.border-gray.bullet.bullet-cross.bullet-red.opacity-50p ?
-    //       .fln.p-3.w-33p.border-l-001.border-gray.bullet.bullet-tick.bullet-green Laravel/Vue.js
+    //- +title #[.inline.strike.gray Two] One framework#[.inline.strike.gray s]: #[.inline.strike.gray Tachyons and] TailwindCSS
+    //- .fla.flcnw.flc.p-2
+    //-   .fln.flcnw.w-100p.border-r-001.border-b-001.border-gray
+    //-     .fln.flrnw.border-b-001.border-gray
+    //-       .fln.p-3.w-33p  
+    //-       .fln.p-3.w-33p.border-l-001.border-t-001.border-gray.bold.text-center.opacity-50p Tachyons
+    //-       .fln.p-3.w-33p.border-l-001.border-t-001.border-gray.bold.text-center TailwindCSS
+    //-     .fln.flrnw.border-b-001.border-gray
+    //-       .fln.p-3.w-33p.bg-gray.bold.gray-1 Tooling
+    //-       .fln.p-3.w-33p.border-l-001.border-gray.bullet.bullet-cross.bullet-red.opacity-50p SCSS
+    //-       .fln.p-3.w-33p.border-l-001.border-gray.bullet.bullet-tick.bullet-green postCSS
+    //-     .fln.flrnw.border-b-001.border-gray
+    //-       .fln.p-3.w-33p.bg-gray.bold.gray-1 Composition
+    //-       .fln.p-3.w-33p.border-l-001.border-gray.bullet.bullet-cross.bullet-red.opacity-50p HTML Templating
+    //-       .fln.p-3.w-33p.border-l-001.border-gray.bullet.bullet-tick.bullet-green #[code.code @apply]
+    //-     .fln.flrnw.border-b-001.border-gray
+    //-       .fln.p-3.w-33p.bg-gray.bold.gray-1 Defaults
+    //-       .fln.p-3.w-33p.border-l-001.border-gray.bullet.bullet-cross.bullet-red.opacity-50p Opinionated
+    //-       .fln.p-3.w-33p.border-l-001.border-gray.bullet.bullet-tick.bullet-green Extensible
+    //-     .fln.flrnw.border-b-001.border-gray
+    //-       .fln.p-3.w-33p.bg-gray.bold.gray-1 Documentation
+    //-       .fln.p-3.w-33p.border-l-001.border-gray.bullet.bullet-cross.bullet-red.opacity-50p No Search
+    //-       .fln.p-3.w-33p.border-l-001.border-gray.bullet.bullet-tick.bullet-green Screencasts, examples
+    //-     .fln.flrnw
+    //-       .fln.p-3.w-33p.bg-gray.bold.gray-1 Community
+    //-       .fln.p-3.w-33p.border-l-001.border-gray.bullet.bullet-cross.bullet-red.opacity-50p ?
+    //-       .fln.p-3.w-33p.border-l-001.border-gray.bullet.bullet-tick.bullet-green Laravel/Vue.js
 
   +slide
     .fla.flcnw.flc.relative
@@ -326,34 +326,34 @@ block slides
         |&lt;/div>
 
 
-  // +slide.bg-green-1
-  //   +title Configuration as code
-  //   .fla.flrnw
-  //     .fln.flcnw.flc
-  //       .fln.codeblock.language-js.text-1.w-100p.px-3
-  //         |module.exports = {
-  //         |    theme: {
-  //         |      fontFamily: {
-  //         |        sans: ['Helvetica', 'Arial', 'sans-serif'],
-  //         |      },
-  //         |      extend: {
-  //         |        colors: {
-  //         |          cyan: '#9cdbff',
-  //         |        },
-  //         |        margin: {
-  //         |          96: '24rem',
-  //         |          128: '32rem',
-  //         |        },
-  //         |      }
-  //         |    },
-  //         |}
-  //     .fla.flcnw.flc
-  //       .fln.flcnw.text-2.pl-2
-  //         .bullet.bullet-tick.bullet-green #[code.code tailwind.config.{js,json}] file
-  //         .bullet.bullet-tick.bullet-green Theming system for changing values
-  //         .bullet.bullet-tick.bullet-green Plugin system for adding new classes
-  //         .bullet.bullet-tick.bullet-green Clear documentation
-  //         .bullet.bullet-tick.bullet-green Shareable configurations
+  //- +slide.bg-green-1
+  //-   +title Configuration as code
+  //-   .fla.flrnw
+  //-     .fln.flcnw.flc
+  //-       .fln.codeblock.language-js.text-1.w-100p.px-3
+  //-         |module.exports = {
+  //-         |    theme: {
+  //-         |      fontFamily: {
+  //-         |        sans: ['Helvetica', 'Arial', 'sans-serif'],
+  //-         |      },
+  //-         |      extend: {
+  //-         |        colors: {
+  //-         |          cyan: '#9cdbff',
+  //-         |        },
+  //-         |        margin: {
+  //-         |          96: '24rem',
+  //-         |          128: '32rem',
+  //-         |        },
+  //-         |      }
+  //-         |    },
+  //-         |}
+  //-     .fla.flcnw.flc
+  //-       .fln.flcnw.text-2.pl-2
+  //-         .bullet.bullet-tick.bullet-green #[code.code tailwind.config.{js,json}] file
+  //-         .bullet.bullet-tick.bullet-green Theming system for changing values
+  //-         .bullet.bullet-tick.bullet-green Plugin system for adding new classes
+  //-         .bullet.bullet-tick.bullet-green Clear documentation
+  //-         .bullet.bullet-tick.bullet-green Shareable configurations
 
   +slide.px-1.bg-green-9
     .fla.flcnw.flc.text-8.amaranth.white.text-shadow
@@ -386,33 +386,33 @@ block slides
 
 
     
-  // - Maintenability: You remove the HTML and you have no dead code
-  // +slide.bg-gray-9
-  //   +title Two sides of the same coin
-  //   .fla.flcnw.flc
-  //     .__coin.amaranth.text-center(style="--edge-size: 2rem; --coin-diameter: 36rem; --turn-time: 6s")
-  //       .__coin-face.__coin-front.bg-yellow.flcnw.h-100p.flc
-  //         .absolute.fill-current.h-60p.w-60p.yellow-8
-  //           include /_includes/_icons/separationOfConcerns.svg
-  //         .white.z-1.text-shadow.text-5 Separation of Concerns
-  //       .__coin-edge
-  //         - for (var edgeCount = 0; edgeCount < 80; edgeCount ++) {
-  //           div.bg-yellow-8(style=`--edge-index: ${edgeCount}`)
-  //         - }
-  //       .__coin-face.__coin-back.bg-yellow.flcnw.h-100p.flc
-  //         .absolute.fill-current.h-60p.w-60p.yellow-8
-  //           include /_includes/_icons/levelOfIndirection.svg
-  //         .white.z-1.text-shadow.text-6 Level of Indirection
-  // +slide
-  //   +title The CSS ZenGarden Phallacy
-  //   .fla.flcnw.flc 
-  //     .fln Not because you can mean you should
-  //     .fln Believe me, I know
-  //   .notes
-  //     li rebranding the whole wbeiste just by changing the CSS
-  //     li never happens in real life
-  //     li slow, too complex
-  //     li we always add wrapper divs or rewrite markup
+  //- - Maintenability: You remove the HTML and you have no dead code
+  //- +slide.bg-gray-9
+  //-   +title Two sides of the same coin
+  //-   .fla.flcnw.flc
+  //-     .__coin.amaranth.text-center(style="--edge-size: 2rem; --coin-diameter: 36rem; --turn-time: 6s")
+  //-       .__coin-face.__coin-front.bg-yellow.flcnw.h-100p.flc
+  //-         .absolute.fill-current.h-60p.w-60p.yellow-8
+  //-           include /_includes/_icons/separationOfConcerns.svg
+  //-         .white.z-1.text-shadow.text-5 Separation of Concerns
+  //-       .__coin-edge
+  //-         - for (var edgeCount = 0; edgeCount < 80; edgeCount ++) {
+  //-           div.bg-yellow-8(style=`--edge-index: ${edgeCount}`)
+  //-         - }
+  //-       .__coin-face.__coin-back.bg-yellow.flcnw.h-100p.flc
+  //-         .absolute.fill-current.h-60p.w-60p.yellow-8
+  //-           include /_includes/_icons/levelOfIndirection.svg
+  //-         .white.z-1.text-shadow.text-6 Level of Indirection
+  //- +slide
+  //-   +title The CSS ZenGarden Phallacy
+  //-   .fla.flcnw.flc 
+  //-     .fln Not because you can mean you should
+  //-     .fln Believe me, I know
+  //-   .notes
+  //-     li rebranding the whole wbeiste just by changing the CSS
+  //-     li never happens in real life
+  //-     li slow, too complex
+  //-     li we always add wrapper divs or rewrite markup
 
 
 

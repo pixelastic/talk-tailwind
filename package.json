@@ -7,7 +7,7 @@
   "devDependencies": {
     "aberlaas": "0.10.2",
     "golgoth": "0.6.2",
-    "sov": "0.0.8"
+    "sov": "0.0.10"
   },
   "files": [
     "build/"
@@ -25,7 +25,8 @@
     "husky:precommit": "./scripts/husky-precommit",
     "lint": "./scripts/lint",
     "lint:fix": "./scripts/lint-fix",
-    "release": "./scripts/release",
+    "release": "./scripts/deploy",
+    "deploy": "./scripts/deploy",
     "serve": "./scripts/serve",
     "test": "./scripts/test",
     "test:watch": "./scripts/test-watch"

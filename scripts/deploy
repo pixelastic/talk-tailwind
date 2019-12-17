@@ -1,0 +1,16 @@
+#!/usr/bin/env sh
+set -e
+
+yarn run build:prod
+
+rsync \
+  --recursive \
+  --verbose \
+  --archive \
+  --update \
+  --delete \
+  --prune-empty-dirs \
+  --compress \
+  ./dist/* \
+  pixelastic:/var/www/talks.pixelastic.com/slides/cssparis-2019-12/
+
