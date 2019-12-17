@@ -1,7 +1,7 @@
 extends /_includes/_layouts/sov
 
 block config
-  - pageTitle = "Tailwind and Utility-first CSS: 3 years later"
+  - pageTitle = "Why is Utility-first CSS awesome?"
   - pageDescription = "I discovered and tried Utility-first CSS 3 years ago. Here is what I learned from it."
   - pageTwitter = "pixelastic"
   - pageAuthor = "Tim Carry"
@@ -10,9 +10,11 @@ block config
 block slides
   +slide.bg-green.text-7
     .fla.flcnw.flc.white.text-shadow.amaranth.bold
-      .fln Utility-first CSS:
-      .fln.italic 3 years later
-    .notes
+      .fln Why is Utility-first CSS 
+      .fln #[.inline.strike.opacity-50p wrong] awesome?
+
+
+  include /_includes/_slides/who-am-i.pug
 
   +slide.bg-gray-9
     +title Styling: BEM
@@ -77,18 +79,18 @@ block slides
     +title HTML and CSS work together
     .fla.flcnw.flc
       .fln.flcnw.w-80p
+        .fln.flrnw.border-001.border-b-0.border-gray
+          .fln.flcnw.flc.w-20p.p-3
+            img.h-14.opacity-25p(src='./assets/images/html.png')
+          .fln.flcnw.flc.w-20p.p-3.border-r-001.border-gray
+            img.h-14(src='./assets/images/css.png')
+          .fla.text-7.red-5.flcnw.flc.amaranth.text-shadow Useless
         .fln.flrnw.border-001.border-gray
           .fln.flcnw.flc.w-20p.p-3
             img.h-14(src='./assets/images/html.png')
           .fln.flcnw.flc.w-20p.border-r-001.p-3.border-gray
             img.h-14.opacity-25p(src='./assets/images/css.png')
           .fla.text-7.red-5.flcnw.flc.amaranth.text-shadow Unusable
-        .fln.flrnw.border-001.border-t-0.border-gray
-          .fln.flcnw.flc.w-20p.p-3
-            img.h-14.opacity-25p(src='./assets/images/html.png')
-          .fln.flcnw.flc.w-20p.p-3.border-r-001.border-gray
-            img.h-14(src='./assets/images/css.png')
-          .fla.text-7.red-5.flcnw.flc.amaranth.text-shadow Useless
 
 
   +slide
@@ -128,10 +130,10 @@ block slides
 
 
   +slide.bg-green-1
-    +title Your styleguide as an API
+    +title Combine classes like Lego Blocks
     .fla.flc.flcnw
       .fln.flcnw.text-5
-        .bullet.bullet-tick.bullet-green Combine classes like Lego Blocks
+        .bullet.bullet-tick.bullet-green Your styleguide as an API
         .bullet.bullet-tick.bullet-green Consistant spacing, colors and font size
         .bullet.bullet-tick.bullet-green Can only use what's defined
         .bullet.bullet-tick.bullet-green Easier to do it right™
@@ -141,57 +143,49 @@ block slides
       .text-8 😱 
       div Repetition!
 
-  +slide.bg-green-1
-    .fla.flcnw.flspb.my-2
-      .fln
-        +title Abstraction with a template
-        .codeblock.p-2
-          |&lt;!-- index.html -->
-          |&lt;Button cssClasses="ml-3" label="Click Me" />
-          |&lt;!-- button.tpl -->
-          |&lt;button class="p-1 rounded shadow-1 bg-gray white ${cssClasses}">${label}&lt;/button>
-      .fln
-        +title Abstraction with #[code.code @apply]
-        .codeblock.pt-2.px-2
-          |&lt;!-- index.html -->
-          |&lt;button class="button ml-3">Click Me!&lt;/button>
-          |&lt;!-- style.css -->
-        .codeblock.pb-2.px-2.language-css
+  +slide
+    +title Abstraction?
+    .fla.flcnw
+      .fla.bg-gray-9.flcnw.flccv
+        .fln.codeblock.pt-2.px-2.text-3
+          |&lt;button class="px-2 py-1 ml-2 text-1 white bold bg-gray border-blue rounded shadow-1">
+          |    Click Me!
+          |&lt;/button>
+
+  +slide
+    +title Abstraction with #[code.code @apply]
+    .fla.flcnw
+      .fla.bg-gray-9.flcnw.flccv
+        .fln.codeblock.pt-2.px-2.text-3
+          |&lt;button class="button">
+          |    Click Me!
+          |&lt;/button>
+      .fla.bg-gray-9.flcnw.flccv
+        .fln.codeblock.pb-2.px-2.language-css.text-3
           |.button {
-          |  @apply p-1 rounded shadow-1 bg-gray white;
+          |  @apply px-2 py-1 ml-2;
+          |  @apply text-1 white bold bg-gray;
+          |  @apply border-blue rounded shadow-1;
           |}
 
-  +slide.px-1.bg-red-9
-    .fla.flcnw.flc.text-8.amaranth.white.text-shadow
-      .text-8 😱 
-      div Responsive!
+  // +slide.px-1.bg-red-9
+  //   .fla.flcnw.flc.text-8.amaranth.white.text-shadow
+  //     .text-8 😱 
+  //     div Responsive!
 
-  +slide.bg-green-1
-    +title Using screen prefixes
-    .fla.flcnw.flc.bg-gray-9
-      .codeblock.language-html.p-3.text-3
-        |&lt;div class="flex flex-column">
-        |    &lt;header class="flex-none w-100p p-1">Header&lt;/header>
-        |    &lt;section class="flex-auto flex flex-column lg:flex-row">
-        |      &lt;nav class="flex-none pb-3 lg:pb-0 lg:pl-3">
-        |       Navigation
-        |     &lt;/nav>
-        |      &lt;main class="flex-auto">Content&lt;/main>
-        |    &lt;/section>
-        |&lt;/div>
 
-  +slide.bg-green-1
-    +title Using #[code.code.lh-1 @apply]
-    .fla.flcnw.flccv.bg-gray-9
-      .codeblock.language-css.p-3.text-3.bg-opacity-0
-        |@screen lg {
-        |    section {
-        |        @apply flex-row;
-        |    }
-        |    nav {
-        |        @apply pb-0 pl-3;
-        |    }
-        |}
+  // +slide
+  //   +title Using #[code.code.lh-1 @screen] and #[code.code.lh-1 @apply]
+  //   .fla.flcnw.flccv.bg-gray-9
+  //     .codeblock.language-css.p-3.text-3.bg-opacity-0
+  //       |@screen lg {
+  //       |    section {
+  //       |        @apply flex-row;
+  //       |    }
+  //       |    nav {
+  //       |        @apply pb-0 pl-3;
+  //       |    }
+  //       |}
 
 
   +slide.px-1.bg-red-9
@@ -214,36 +208,40 @@ block slides
       div How can I try?
 
 
-  +slide.bg-green-1
-    +title #[.inline.strike.gray Two] One framework#[.inline.strike.gray s]: #[.inline.strike.gray Tachyons and] TailwindCSS
-    .fla.flcnw.flc.p-2
-      .fln.flcnw.w-100p.border-r-001.border-b-001.border-gray
-        .fln.flrnw.border-b-001.border-gray
-          .fln.p-3.w-33p  
-          .fln.p-3.w-33p.border-l-001.border-t-001.border-gray.bold.text-center.opacity-50p Tachyons
-          .fln.p-3.w-33p.border-l-001.border-t-001.border-gray.bold.text-center TailwindCSS
-        .fln.flrnw.border-b-001.border-gray
-          .fln.p-3.w-33p.bg-gray.bold.gray-1 Tooling
-          .fln.p-3.w-33p.border-l-001.border-gray.bullet.bullet-cross.bullet-red.opacity-50p SCSS
-          .fln.p-3.w-33p.border-l-001.border-gray.bullet.bullet-tick.bullet-green postCSS
-        .fln.flrnw.border-b-001.border-gray
-          .fln.p-3.w-33p.bg-gray.bold.gray-1 Composition
-          .fln.p-3.w-33p.border-l-001.border-gray.bullet.bullet-cross.bullet-red.opacity-50p HTML Templating
-          .fln.p-3.w-33p.border-l-001.border-gray.bullet.bullet-tick.bullet-green #[code.code @apply]
-        .fln.flrnw.border-b-001.border-gray
-          .fln.p-3.w-33p.bg-gray.bold.gray-1 Defaults
-          .fln.p-3.w-33p.border-l-001.border-gray.bullet.bullet-cross.bullet-red.opacity-50p Opinionated
-          .fln.p-3.w-33p.border-l-001.border-gray.bullet.bullet-tick.bullet-green Extensible
-        .fln.flrnw.border-b-001.border-gray
-          .fln.p-3.w-33p.bg-gray.bold.gray-1 Documentation
-          .fln.p-3.w-33p.border-l-001.border-gray.bullet.bullet-cross.bullet-red.opacity-50p No Search
-          .fln.p-3.w-33p.border-l-001.border-gray.bullet.bullet-tick.bullet-green Screencasts, examples
-        .fln.flrnw
-          .fln.p-3.w-33p.bg-gray.bold.gray-1 Community
-          .fln.p-3.w-33p.border-l-001.border-gray.bullet.bullet-cross.bullet-red.opacity-50p ?
-          .fln.p-3.w-33p.border-l-001.border-gray.bullet.bullet-tick.bullet-green Laravel/Vue.js
+  +slide
+    .fla.flcnw.flc
+      .fln.w-100p
+        include /_includes/_icons/tailwind.svg
 
-  +slide.bg-green-1
+    // +title #[.inline.strike.gray Two] One framework#[.inline.strike.gray s]: #[.inline.strike.gray Tachyons and] TailwindCSS
+    // .fla.flcnw.flc.p-2
+    //   .fln.flcnw.w-100p.border-r-001.border-b-001.border-gray
+    //     .fln.flrnw.border-b-001.border-gray
+    //       .fln.p-3.w-33p  
+    //       .fln.p-3.w-33p.border-l-001.border-t-001.border-gray.bold.text-center.opacity-50p Tachyons
+    //       .fln.p-3.w-33p.border-l-001.border-t-001.border-gray.bold.text-center TailwindCSS
+    //     .fln.flrnw.border-b-001.border-gray
+    //       .fln.p-3.w-33p.bg-gray.bold.gray-1 Tooling
+    //       .fln.p-3.w-33p.border-l-001.border-gray.bullet.bullet-cross.bullet-red.opacity-50p SCSS
+    //       .fln.p-3.w-33p.border-l-001.border-gray.bullet.bullet-tick.bullet-green postCSS
+    //     .fln.flrnw.border-b-001.border-gray
+    //       .fln.p-3.w-33p.bg-gray.bold.gray-1 Composition
+    //       .fln.p-3.w-33p.border-l-001.border-gray.bullet.bullet-cross.bullet-red.opacity-50p HTML Templating
+    //       .fln.p-3.w-33p.border-l-001.border-gray.bullet.bullet-tick.bullet-green #[code.code @apply]
+    //     .fln.flrnw.border-b-001.border-gray
+    //       .fln.p-3.w-33p.bg-gray.bold.gray-1 Defaults
+    //       .fln.p-3.w-33p.border-l-001.border-gray.bullet.bullet-cross.bullet-red.opacity-50p Opinionated
+    //       .fln.p-3.w-33p.border-l-001.border-gray.bullet.bullet-tick.bullet-green Extensible
+    //     .fln.flrnw.border-b-001.border-gray
+    //       .fln.p-3.w-33p.bg-gray.bold.gray-1 Documentation
+    //       .fln.p-3.w-33p.border-l-001.border-gray.bullet.bullet-cross.bullet-red.opacity-50p No Search
+    //       .fln.p-3.w-33p.border-l-001.border-gray.bullet.bullet-tick.bullet-green Screencasts, examples
+    //     .fln.flrnw
+    //       .fln.p-3.w-33p.bg-gray.bold.gray-1 Community
+    //       .fln.p-3.w-33p.border-l-001.border-gray.bullet.bullet-cross.bullet-red.opacity-50p ?
+    //       .fln.p-3.w-33p.border-l-001.border-gray.bullet.bullet-tick.bullet-green Laravel/Vue.js
+
+  +slide
     .fla.flcnw.flc.relative
       .flrw.flspa.text-2.p-3
         .fln.px-1.py-01 #[code.code .inline-block]
@@ -292,14 +290,15 @@ block slides
         .fln.px-1.py-01 #[code.code .bg-repeat-x]
         .fln.px-1.py-01 #[code.code .visible]
         .fln.px-1.py-01 #[code.code .inline]
-      .absolute.bottom-0.left-0.right-0.bg-white.bg-opacity-90p.p-3
-        .flrnw.flc.text-4
-          .fla.flcnw.flc
-            .bullet.bullet-green.bullet-tick Low level
-          .fla.flcnw.flc
-            .bullet.bullet-green.bullet-tick Normalized
+      .absolute.top-0.bottom-0.right-0.left-0.flcnw.flccv
+        .fln.bg-white.bg-opacity-90p.p-3
+          .flrnw.flc.text-4
+            .fla.flcnw.flc
+              .bullet.bullet-green.bullet-tick Low level
+            .fla.flcnw.flc
+              .bullet.bullet-green.bullet-tick Normalized
 
-  +slide.bg-green-1
+  +slide
     +title Pseudo-element prefix
     .fla.flcnw.flc
       .flrw.flspa.text-5.p-3
@@ -312,42 +311,78 @@ block slides
         .fln.p-4 #[code.code .first-child:]
         .fln.p-4 #[code.code .last-child:]
 
+  +slide
+    +title Responsive prefixes
+    .fla.flcnw.flc.bg-gray-9
+      .codeblock.language-html.p-3.text-3
+        |&lt;div class="flex flex-column">
+        |    &lt;header class="flex-none w-100p p-1">Header&lt;/header>
+        |    &lt;section class="flex-auto flex flex-column lg:flex-row">
+        |      &lt;nav class="flex-none pb-3 lg:pb-0 lg:pr-3">
+        |       Navigation
+        |     &lt;/nav>
+        |      &lt;main class="flex-auto">Content&lt;/main>
+        |    &lt;/section>
+        |&lt;/div>
+
+
+  // +slide.bg-green-1
+  //   +title Configuration as code
+  //   .fla.flrnw
+  //     .fln.flcnw.flc
+  //       .fln.codeblock.language-js.text-1.w-100p.px-3
+  //         |module.exports = {
+  //         |    theme: {
+  //         |      fontFamily: {
+  //         |        sans: ['Helvetica', 'Arial', 'sans-serif'],
+  //         |      },
+  //         |      extend: {
+  //         |        colors: {
+  //         |          cyan: '#9cdbff',
+  //         |        },
+  //         |        margin: {
+  //         |          96: '24rem',
+  //         |          128: '32rem',
+  //         |        },
+  //         |      }
+  //         |    },
+  //         |}
+  //     .fla.flcnw.flc
+  //       .fln.flcnw.text-2.pl-2
+  //         .bullet.bullet-tick.bullet-green #[code.code tailwind.config.{js,json}] file
+  //         .bullet.bullet-tick.bullet-green Theming system for changing values
+  //         .bullet.bullet-tick.bullet-green Plugin system for adding new classes
+  //         .bullet.bullet-tick.bullet-green Clear documentation
+  //         .bullet.bullet-tick.bullet-green Shareable configurations
+
+  +slide.px-1.bg-green-9
+    .fla.flcnw.flc.text-8.amaranth.white.text-shadow
+      .text-8 🧐
+      div Conclusion
 
   +slide.bg-green-1
-    +title Configuration as code
-    .fla.flrnw
-      .fln.bg-gray-9.flcnw.flc.p-3
-        .fln.codeblock.language-js
-          |module.exports = {
-          |    theme: {
-          |      fontFamily: {
-          |        sans: ['Helvetica', 'Arial', 'sans-serif'],
-          |      },
-          |      extend: {
-          |        colors: {
-          |          cyan: '#9cdbff',
-          |        },
-          |        margin: {
-          |          96: '24rem',
-          |          128: '32rem',
-          |        },
-          |      }
-          |    },
-          |}
+    +title Everything I like about Utility-first CSS
+    .fla.flcnw.flc
+      .fln.flcnw.text-5
+        .fln.bullet.bullet-tick.bullet-green I write less CSS
+        .fln.bullet.bullet-tick.bullet-green Styleguide as an API
+        .fln.bullet.bullet-tick.bullet-green Less context-switching
+        .fln.bullet.bullet-tick.bullet-green Projects are easier to maintain
+        .fln.bullet.bullet-tick.bullet-green ...without losing anything else
+
+  +slide.bg-green
+    .fla.flcnw.amaranth.white.text-5
+      .fln.h-33p.flc.flcnw.text-9.bold.text-shadow Thank you!
       .fla.flcnw.flc
-        .fln.flcnw.text-2.pl-2
-          .bullet.bullet-tick.bullet-green #[code.code tailwind.config.{js,json}] file
-          .bullet.bullet-tick.bullet-green Theming system for changing values
-          .bullet.bullet-tick.bullet-green Plugin system for adding new classes
-          .bullet.bullet-tick.bullet-green Clear documentation
-          .bullet.bullet-tick.bullet-green Shareable configurations
-
-  +slide.bg-green-1
-    +title In a nutshell
-    .fln Easier to get back to a project
-    .fln Easier to get the design right because API
-    .fln Easier to prototype
-    .fln Still able to do hacks and custom things
+        a.flrnw.flrcv(href="https://tailwindcss.com/") 
+          img.h-10.fln(src="./assets/images/tailwind.png") 
+          .fln.ml-2.text-shadow.hover_underline tailwindcss.com
+      .fla.flcnw.flc
+        a.flrnw.flrcv(href="https://github.com/pixelastic/tailwind-config-norska") 
+          img.w-10.fln.rounded-full(src="./assets/images/github.png") 
+          .fln.ml-2.text-shadow.hover_underline pixelastic/tailwind-config-norska
+      .fla.flcnw.flc
+        a.text-shadow.hover_underline(href=pageUrl)=_.replace(pageUrl, 'https://', '')
 
 
     
