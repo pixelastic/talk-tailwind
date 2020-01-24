@@ -7,7 +7,7 @@
   "devDependencies": {
     "aberlaas": "0.10.2",
     "golgoth": "0.6.2",
-    "sov": "0.0.10"
+    "sov": "0.1.0"
   },
   "files": [
     "build/"
