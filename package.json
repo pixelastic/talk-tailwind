@@ -5,15 +5,15 @@
   },
   "description": "What is utility-first and why is it good for you?",
   "devDependencies": {
-    "aberlaas": "0.10.2",
-    "golgoth": "0.6.2",
-    "sov": "0.1.0"
+    "aberlaas": "1.2.2",
+    "golgoth": "1.1.1",
+    "sov": "0.2.0"
   },
   "files": [
-    "build/"
+    "lib/*.js"
   ],
   "license": "MIT",
-  "main": "build/index.js",
+  "main": "lib/main.js",
   "name": "talk-tailwind",
   "repository": "git@github.com:pixelastic/talk-tailwind.git",
   "scripts": {
@@ -22,11 +22,11 @@
     "build:watch": "./scripts/build-watch",
     "ci": "./scripts/ci",
     "cms": "./scripts/cms",
+    "deploy": "./scripts/deploy",
     "husky:precommit": "./scripts/husky-precommit",
     "lint": "./scripts/lint",
     "lint:fix": "./scripts/lint-fix",
     "release": "./scripts/deploy",
-    "deploy": "./scripts/deploy",
     "serve": "./scripts/serve",
     "test": "./scripts/test",
     "test:watch": "./scripts/test-watch"
