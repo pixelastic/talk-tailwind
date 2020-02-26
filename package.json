@@ -7,7 +7,7 @@
   "devDependencies": {
     "aberlaas": "1.2.2",
     "golgoth": "1.1.1",
-    "sov": "0.2.0"
+    "sov": "0.2.3"
   },
   "license": "MIT",
   "name": "talk-tailwind",
