@@ -2,10 +2,10 @@ extends /_includes/_layouts/sov
 
 block config
   - pageTitle = "Why is Utility-first CSS awesome?"
-  - pageDescription = "I discovered and tried Utility-first CSS 3 years ago. Here is what I learned from it."
+  - pageDescription = "What are those weird dl-* classes? This seems so wrong."
   - pageTwitter = "pixelastic"
   - pageAuthor = "Tim Carry"
-  - pageUrl = "https://talks.pixelastic.com/slides/cssparis-2019-12/"
+  - pageUrl = "https://talks.pixelastic.com/slides/bbl-doctolib-utility-first-css/"
 
 block slides
   +slide.bg-green.text-7
@@ -75,31 +75,31 @@ block slides
         .fla.text-center.bold ≠
         .fla Separation of #[.inline.red Filetypes]
 
-  +slide
-    +title HTML and CSS work together
-    .fla.flcnw.flc
-      .fln.flcnw.w-80p
-        .fln.flrnw.border-001.border-b-0.border-gray
-          .fln.flcnw.flc.w-20p.p-3
-            img.h-14.opacity-25p(src='./assets/images/html.png')
-          .fln.flcnw.flc.w-20p.p-3.border-r-001.border-gray
-            img.h-14(src='./assets/images/css.png')
-          .fla.text-7.red-5.flcnw.flc.amaranth.text-shadow Useless
-        .fln.flrnw.border-001.border-gray
-          .fln.flcnw.flc.w-20p.p-3
-            img.h-14(src='./assets/images/html.png')
-          .fln.flcnw.flc.w-20p.border-r-001.p-3.border-gray
-            img.h-14.opacity-25p(src='./assets/images/css.png')
-          .fla.text-7.red-5.flcnw.flc.amaranth.text-shadow Unusable
+  //- +slide
+  //-   +title HTML and CSS work together
+  //-   .fla.flcnw.flc
+  //-     .fln.flcnw.w-80p
+  //-       .fln.flrnw.border-001.border-b-0.border-gray
+  //-         .fln.flcnw.flc.w-20p.p-3
+  //-           img.h-14.opacity-25p(src='./assets/images/html.png')
+  //-         .fln.flcnw.flc.w-20p.p-3.border-r-001.border-gray
+  //-           img.h-14(src='./assets/images/css.png')
+  //-         .fla.text-7.red-5.flcnw.flc.amaranth.text-shadow Useless
+  //-       .fln.flrnw.border-001.border-gray
+  //-         .fln.flcnw.flc.w-20p.p-3
+  //-           img.h-14(src='./assets/images/html.png')
+  //-         .fln.flcnw.flc.w-20p.border-r-001.p-3.border-gray
+  //-           img.h-14.opacity-25p(src='./assets/images/css.png')
+  //-         .fla.text-7.red-5.flcnw.flc.amaranth.text-shadow Unusable
 
 
   +slide
-    +title Reduced Context-Switching
+    +title Reduced Mental Context-Switching
     .fla.flcnw.flc 
       .fln.flrnw.flspa.amaranth.w-100p
         .fla.flc.flcnw.mx-5
-          img.h-18(src='./assets/images/html.png')
-          .text-6 HTML
+          img.h-18(src='./assets/images/react.png')
+          .text-6 React
         .fla.flc.flcnw.mx-5
           img.h-18(src='./assets/images/css.png')
           .text-6 CSS
@@ -354,6 +354,18 @@ block slides
   //-         .bullet.bullet-tick.bullet-green Plugin system for adding new classes
   //-         .bullet.bullet-tick.bullet-green Clear documentation
   //-         .bullet.bullet-tick.bullet-green Shareable configurations
+  //-
+  // AT doctolib
+  // We use utility (and other methodologies), but not yet tailwind
+  // We write utility classes by hand when we need them
+  // We prefix them with dl- and add important so they take precedence over
+  // existing classes
+  //
+  // Next steps are to add Tailwind to the stack
+  // First, it will only generate the classes we already have, so less errors
+  // Then, we'll progressively have it handle more and more parts of CSS
+  // Finally, we should be able to use only that, and not write custom CSS
+  // anymore
 
   +slide.px-1.bg-green-9
     .fla.flcnw.flc.text-8.amaranth.white.text-shadow
