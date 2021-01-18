@@ -12,5 +12,5 @@ rsync \
   --prune-empty-dirs \
   --compress \
   ./dist/* \
-  pixelastic:/var/www/talks.pixelastic.com/slides/cssparis-2019-12/
+  pixelastic:/var/www/talks.pixelastic.com/slides/bbl-doctolib-utility-first-css/
 

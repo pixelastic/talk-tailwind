@@ -67,8 +67,13 @@ block slides
     ul.notes
       li You put your CSS in my HTML. You're breaking the separation of concerns
 
+  +slide.px-1.bg-gray-9
+    +title.white Sorry to disappoint but...
+    .fla.flcnw.flc
+      img.h-18(src='./assets/images/react.png')
+      .blue-4.text-7.amaranth.lh-1.mt-1 React
 
-  +slide.bg-green
+  +slide.bg-gray-9
     .fla.flcnw.flc
       .flcnw.text-7.amaranth.white.text-shadow
         .fla Separation of #[.inline.yellow Concerns]
@@ -99,13 +104,13 @@ block slides
       .fln.flrnw.flspa.amaranth.w-100p
         .fla.flc.flcnw.mx-5
           img.h-18(src='./assets/images/react.png')
-          .text-6 React
+          .text-4.code.mt-2 Settings.js
         .fla.flc.flcnw.mx-5
           img.h-18(src='./assets/images/css.png')
-          .text-6 CSS
+          .text-4.code.mt-2 settings.css
         .fla.flc.flcnw.mx-5
           img.h-18(src='./assets/images/browsers.png')
-          .text-6 Browser
+          .text-4.code.mt-2 /settings
 
   include /_includes/_slides/utility.pug
 
@@ -117,16 +122,21 @@ block slides
 
   +slide.bg-green
     .fla.flcnw.flc
-      .fln.amaranth.text-shadow.text-8.white.lh-1.relative
-        .absolute.strike.white.opacity-25p.-top-11.z-0 Cascading
-        .z-1.relative
-          .fln #[.inline.orange.bold C]ompositing
-          .fln #[.inline.orange.bold S]tyle 
-          .fln #[.inline.orange.bold S]heets
-    .notes
-      div Composition Over Inheritance
-      div Small classes that do one thing
-      div Use several of them
+      .fln.amaranth.text-8.white.lh-1
+        .fln.relative
+          .absolute.white.text-shadow #[.inline.orange.bold C]ascading
+          .transparent #[.inline.bold C]ompositing
+        .fln.text-shadow #[.inline.orange.bold S]tyle 
+        .fln.text-shadow #[.inline.orange.bold S]heets
+
+  +slide.bg-green
+    .fla.flcnw.flc
+      .fln.amaranth.text-8.white.lh-1
+        .fln.relative
+          .absolute.strike.white.text-shadow.opacity-25p.-top-11.z-0 Cascading
+          .text-shadow.relative #[.inline.orange.bold C]ompositing
+        .fln.text-shadow #[.inline.orange.bold S]tyle 
+        .fln.text-shadow #[.inline.orange.bold S]heets
 
 
   +slide.bg-green-1
@@ -141,56 +151,6 @@ block slides
   +slide.px-1.bg-red-9
     .fla.flcnw.flc.text-8.amaranth.white.text-shadow
       .text-8 😱 
-      div Repetition!
-
-  +slide
-    +title Abstraction?
-    .fla.flcnw
-      .fla.bg-gray-9.flcnw.flccv
-        .fln.codeblock.pt-2.px-2.text-3
-          |&lt;button class="px-2 py-1 ml-2 text-1 white bold bg-gray border-blue rounded shadow-1">
-          |    Click Me!
-          |&lt;/button>
-
-  +slide
-    +title Abstraction with #[code.code @apply]
-    .fla.flcnw
-      .fla.bg-gray-9.flcnw.flccv
-        .fln.codeblock.pt-2.px-2.text-3
-          |&lt;button class="button">
-          |    Click Me!
-          |&lt;/button>
-      .fla.bg-gray-9.flcnw.flccv
-        .fln.codeblock.pb-2.px-2.language-css.text-3
-          |.button {
-          |  @apply px-2 py-1 ml-2;
-          |  @apply text-1 white bold bg-gray;
-          |  @apply border-blue rounded shadow-1;
-          |}
-
-  //- +slide.px-1.bg-red-9
-  //-   .fla.flcnw.flc.text-8.amaranth.white.text-shadow
-  //-     .text-8 😱 
-  //-     div Responsive!
-
-
-  //- +slide
-  //-   +title Using #[code.code.lh-1 @screen] and #[code.code.lh-1 @apply]
-  //-   .fla.flcnw.flccv.bg-gray-9
-  //-     .codeblock.language-css.p-3.text-3.bg-opacity-0
-  //-       |@screen lg {
-  //-       |    section {
-  //-       |        @apply flex-row;
-  //-       |    }
-  //-       |    nav {
-  //-       |        @apply pb-0 pl-3;
-  //-       |    }
-  //-       |}
-
-
-  +slide.px-1.bg-red-9
-    .fla.flcnw.flc.text-8.amaranth.white.text-shadow
-      .text-8 😱 
       div Performance!
 
   +slide.bg-green-1
@@ -198,48 +158,13 @@ block slides
     .fla.flcnw.flc
       .fln.flcnw.text-5
         .fln.bullet.bullet-tick.bullet-green Parsing single class selectors is fast
-        .fln.bullet.bullet-tick.bullet-green #[code.code @apply] to reduce boilerplate
         .fln.bullet.bullet-tick.bullet-green Perfect use-case for Gzip/Brotli
-        .fln.bullet.bullet-tick.bullet-green purgeCSS to remove unused classes
-
-  +slide.px-1.bg-green-9
-    .fla.flcnw.flc.text-8.amaranth.white.text-shadow
-      .text-8 🤨
-      div How can I try?
-
+        .fln.bullet.bullet-tick.bullet-green Easy to purge any unused class
 
   +slide
     .fla.flcnw.flc
       .fln.w-100p
         include /_includes/_icons/tailwind.svg
-
-    //- +title #[.inline.strike.gray Two] One framework#[.inline.strike.gray s]: #[.inline.strike.gray Tachyons and] TailwindCSS
-    //- .fla.flcnw.flc.p-2
-    //-   .fln.flcnw.w-100p.border-r-001.border-b-001.border-gray
-    //-     .fln.flrnw.border-b-001.border-gray
-    //-       .fln.p-3.w-33p  
-    //-       .fln.p-3.w-33p.border-l-001.border-t-001.border-gray.bold.text-center.opacity-50p Tachyons
-    //-       .fln.p-3.w-33p.border-l-001.border-t-001.border-gray.bold.text-center TailwindCSS
-    //-     .fln.flrnw.border-b-001.border-gray
-    //-       .fln.p-3.w-33p.bg-gray.bold.gray-1 Tooling
-    //-       .fln.p-3.w-33p.border-l-001.border-gray.bullet.bullet-cross.bullet-red.opacity-50p SCSS
-    //-       .fln.p-3.w-33p.border-l-001.border-gray.bullet.bullet-tick.bullet-green postCSS
-    //-     .fln.flrnw.border-b-001.border-gray
-    //-       .fln.p-3.w-33p.bg-gray.bold.gray-1 Composition
-    //-       .fln.p-3.w-33p.border-l-001.border-gray.bullet.bullet-cross.bullet-red.opacity-50p HTML Templating
-    //-       .fln.p-3.w-33p.border-l-001.border-gray.bullet.bullet-tick.bullet-green #[code.code @apply]
-    //-     .fln.flrnw.border-b-001.border-gray
-    //-       .fln.p-3.w-33p.bg-gray.bold.gray-1 Defaults
-    //-       .fln.p-3.w-33p.border-l-001.border-gray.bullet.bullet-cross.bullet-red.opacity-50p Opinionated
-    //-       .fln.p-3.w-33p.border-l-001.border-gray.bullet.bullet-tick.bullet-green Extensible
-    //-     .fln.flrnw.border-b-001.border-gray
-    //-       .fln.p-3.w-33p.bg-gray.bold.gray-1 Documentation
-    //-       .fln.p-3.w-33p.border-l-001.border-gray.bullet.bullet-cross.bullet-red.opacity-50p No Search
-    //-       .fln.p-3.w-33p.border-l-001.border-gray.bullet.bullet-tick.bullet-green Screencasts, examples
-    //-     .fln.flrnw
-    //-       .fln.p-3.w-33p.bg-gray.bold.gray-1 Community
-    //-       .fln.p-3.w-33p.border-l-001.border-gray.bullet.bullet-cross.bullet-red.opacity-50p ?
-    //-       .fln.p-3.w-33p.border-l-001.border-gray.bullet.bullet-tick.bullet-green Laravel/Vue.js
 
   +slide
     .fla.flcnw.flc.relative
@@ -294,9 +219,43 @@ block slides
         .fln.bg-white.bg-opacity-90p.p-3
           .flrnw.flc.text-4
             .fla.flcnw.flc
-              .bullet.bullet-green.bullet-tick Low level
-            .fla.flcnw.flc
-              .bullet.bullet-green.bullet-tick Normalized
+              .bullet.bullet-green.bullet-tick For #[.inline.bold.green beginners] and #[.inline.bold.orange experts]
+
+  +slide.px-1.bg-teal
+    .fla.flcnw.flc.text-8.amaranth.white.text-shadow
+      .text-8 😍
+      div @apply
+
+  +slide.bg-gray-9
+    +title.white Too much boilerplate
+    .fla.flcnw
+      .fla.bg-gray-9.flcnw.flccv
+        .fln.codeblock.pt-2.px-2.text-3
+          |&lt;button class="px-2 py-1 ml-2 text-1 text-white bold bg-gray border-blue rounded shadow-1">
+          |    Click Me!
+          |&lt;/button>
+
+  +slide.bg-gray-9
+    +title.white Abstraction with #[code.code @apply]
+    .fla.flcnw
+      .fla.bg-gray-9.flcnw.flccv
+        .fln.codeblock.pt-2.px-2.text-3
+          |&lt;button class="button">
+          |    Click Me!
+          |&lt;/button>
+      .fla.bg-gray-9.flcnw.flccv
+        .fln.codeblock.pb-2.px-2.language-css.text-3
+          |.button {
+          |  @apply px-2 py-1 ml-2;
+          |  @apply text-1 text-white bold bg-gray;
+          |  @apply border-blue rounded shadow-1;
+          |}
+          |
+
+  +slide.px-1.bg-teal
+    .fla.flcnw.flc.text-8.amaranth.white.text-shadow
+      .text-8 😍😍
+      div .pseudo:
 
   +slide
     +title Pseudo-element prefix
@@ -311,120 +270,126 @@ block slides
         .fln.p-4 #[code.code .first-child:]
         .fln.p-4 #[code.code .last-child:]
 
-  +slide
-    +title Responsive prefixes
+  +slide.bg-gray-9
+    +title.white Pseudo prefixes
     .fla.flcnw.flc.bg-gray-9
-      .codeblock.language-html.p-3.text-3
+      .codeblock.language-html.p-3.text-2
         |&lt;div class="flex flex-column">
-        |    &lt;header class="flex-none w-100p p-1">Header&lt;/header>
+        |    &lt;header class="flex-none w-100p p-1 lg:hidden">Header&lt;/header>
         |    &lt;section class="flex-auto flex flex-column lg:flex-row">
-        |      &lt;nav class="flex-none pb-3 lg:pb-0 lg:pr-3">
+        |      &lt;nav class="flex-none pb-3 lg:pb-0 lg:pr-3 hover:bg-blue">
         |       Navigation
         |     &lt;/nav>
         |      &lt;main class="flex-auto">Content&lt;/main>
         |    &lt;/section>
         |&lt;/div>
+        |
+        |
 
-
-  //- +slide.bg-green-1
-  //-   +title Configuration as code
-  //-   .fla.flrnw
-  //-     .fln.flcnw.flc
-  //-       .fln.codeblock.language-js.text-1.w-100p.px-3
-  //-         |module.exports = {
-  //-         |    theme: {
-  //-         |      fontFamily: {
-  //-         |        sans: ['Helvetica', 'Arial', 'sans-serif'],
-  //-         |      },
-  //-         |      extend: {
-  //-         |        colors: {
-  //-         |          cyan: '#9cdbff',
-  //-         |        },
-  //-         |        margin: {
-  //-         |          96: '24rem',
-  //-         |          128: '32rem',
-  //-         |        },
-  //-         |      }
-  //-         |    },
-  //-         |}
-  //-     .fla.flcnw.flc
-  //-       .fln.flcnw.text-2.pl-2
-  //-         .bullet.bullet-tick.bullet-green #[code.code tailwind.config.{js,json}] file
-  //-         .bullet.bullet-tick.bullet-green Theming system for changing values
-  //-         .bullet.bullet-tick.bullet-green Plugin system for adding new classes
-  //-         .bullet.bullet-tick.bullet-green Clear documentation
-  //-         .bullet.bullet-tick.bullet-green Shareable configurations
-  //-
-  // AT doctolib
-  // We use utility (and other methodologies), but not yet tailwind
-  // We write utility classes by hand when we need them
-  // We prefix them with dl- and add important so they take precedence over
-  // existing classes
-  //
-  // Next steps are to add Tailwind to the stack
-  // First, it will only generate the classes we already have, so less errors
-  // Then, we'll progressively have it handle more and more parts of CSS
-  // Finally, we should be able to use only that, and not write custom CSS
-  // anymore
-
-  +slide.px-1.bg-green-9
+  +slide.px-1.bg-teal
     .fla.flcnw.flc.text-8.amaranth.white.text-shadow
-      .text-8 🧐
-      div Conclusion
+      .text-8 😍😍😍
+      div Configuration
 
   +slide.bg-green-1
-    +title Everything I like about Utility-first CSS
+    +title Configuration as code
+    .fla.flrnw
+      .fln.flcnw.flc.w-33p.h-100p.bg-gray-9
+        .fln.codeblock.language-js.text-1.w-100p.px-3
+          |module.exports = {
+          |  theme: {
+          |    colors: {
+          |      'blue-lighter': '#f2fafd',
+          |      'blue-light': '#ccecfa',
+          |      'blue': '#0596de',
+          |      'blue-dark': '#11689e',
+          |      'blue-darker': '#0b4c76',
+          |    },
+          |    fontSize: {
+          |      smaller: '12px',
+          |      body: '14px',
+          |      bigger: '16px',
+          |    }
+          |  },
+          |}
+      .fla.flcnw.flc
+        .fln.flcnw.text-3.pl-2
+          .bullet.bullet-tick.bullet-green #[code.code tailwind.config.js]
+          .bullet.bullet-tick.bullet-green Appending to default values...
+          .bullet.bullet-tick.bullet-green ...or overwriting everything
+          .bullet.bullet-tick.bullet-green Plugin system for custom classes
+
+  +slide.px-1.bg-teal
+    .fla.flcnw.flc.text-8.amaranth.white.text-shadow
+      .text-8 😍😍😍😍
+      div No dead code
+
+  +slide.bg-green-1
+    +title Keeping only classes actually in use
+    .fla.flcnw
+      .fln.h-50p.flrnw
+        .fla.p-1.flcnw.flcab
+          .text-3.amaranth.text-shadow.green.bold Day 1
+          .codeblock.language-html.p-1.text-2.rounded
+            |&lt;!-- HTML -->
+            |&lt;a class="bg-green text-white">Continue&lt;/a>
+            |&lt;a class="bg-red text-white px-4">Cancel&lt;/a>
+        .fla.p-1.flcnw.flcab
+          .codeblock.language-css.text-2.rounded.p-1
+            |/* CSS */
+            |.bg-green { … }
+            |.bg-red { … }
+            |.px-4 { … }
+            |.text-white { … }
+      .fln.h-50p.flrnw(data-stp)
+        .fla.p-1.flcnw.flcab
+          .text-3.amaranth.text-shadow.green.bold Day 42
+          .codeblock.language-html.p-1.text-2.rounded
+            |&lt;!-- HTML -->
+            |&lt;a class="bg-green text-white">Continue&lt;/a>
+        .fla.p-1.flcnw.flcab
+          .codeblock.language-css.text-2.rounded.p-1
+            |/* CSS */
+            |.bg-green { … }
+            |.text-white { … }
+
+  +slide.px-1.bg-gray-2
+    +title What about us?
     .fla.flcnw.flc
-      .fln.flcnw.text-5
-        .fln.bullet.bullet-tick.bullet-green I write less CSS
-        .fln.bullet.bullet-tick.bullet-green Styleguide as an API
-        .fln.bullet.bullet-tick.bullet-green Less context-switching
-        .fln.bullet.bullet-tick.bullet-green Projects are easier to maintain
-        .fln.bullet.bullet-tick.bullet-green ...without losing anything else
+      img.h-20(src='./assets/images/doctolib.png')
+
+  +slide.bg-green-1
+    +title Roadmap
+    .fla.flcnw.flc
+      .fln.flcnw.text-4.h-80p.flspa
+        .fln ☑️  Custom #[.inline.code .dl-*] utility classes
+        .fln ⏳ Automated build with Tailwind
+        .fln ⬜ Cleanup inconsistencies
+        .fln ⬜ Full Tailwind integration
+        .fln ⬜ Never write custom CSS again
+
+
+  +slide.bg-green-1
+    +title What we'll gain:
+    .fla.flcnw.flc
+      .fln.flcnw.text-7
+        .fln.bullet.bullet-tick.bullet-green Less code
+        .fln.bullet.bullet-tick.bullet-green More focus
 
   +slide.bg-green
-    .fla.flcnw.amaranth.white.text-5
-      .fln.h-33p.flc.flcnw.text-9.bold.text-shadow Thank you!
+    .fla.flcnw.amaranth.white.text-7
+      .fln.h-33p.flc.flcnw.text-7.bold.text-shadow Thank you!
       .fla.flcnw.flc
         a.flrnw.flrcv(href="https://tailwindcss.com/") 
           img.h-10.fln(src="./assets/images/tailwind.png") 
           .fln.ml-2.text-shadow.hover_underline tailwindcss.com
       .fla.flcnw.flc
-        a.flrnw.flrcv(href="https://github.com/pixelastic/tailwind-config-norska") 
+        a.flrnw.flrcv(href="https://github.com/doctolib/rfcs/pull/8") 
           img.w-10.fln.rounded-full(src="./assets/images/github.png") 
-          .fln.ml-2.text-shadow.hover_underline pixelastic/tailwind-config-norska
-      .fla.flcnw.flc
-        a.text-shadow.hover_underline(href=pageUrl)=_.replace(pageUrl, 'https://', '')
+          .fln.ml-2.text-shadow.hover_underline doctolib/rfcs
 
 
     
-  //- - Maintenability: You remove the HTML and you have no dead code
-  //- +slide.bg-gray-9
-  //-   +title Two sides of the same coin
-  //-   .fla.flcnw.flc
-  //-     .__coin.amaranth.text-center(style="--edge-size: 2rem; --coin-diameter: 36rem; --turn-time: 6s")
-  //-       .__coin-face.__coin-front.bg-yellow.flcnw.h-100p.flc
-  //-         .absolute.fill-current.h-60p.w-60p.yellow-8
-  //-           include /_includes/_icons/separationOfConcerns.svg
-  //-         .white.z-1.text-shadow.text-5 Separation of Concerns
-  //-       .__coin-edge
-  //-         - for (var edgeCount = 0; edgeCount < 80; edgeCount ++) {
-  //-           div.bg-yellow-8(style=`--edge-index: ${edgeCount}`)
-  //-         - }
-  //-       .__coin-face.__coin-back.bg-yellow.flcnw.h-100p.flc
-  //-         .absolute.fill-current.h-60p.w-60p.yellow-8
-  //-           include /_includes/_icons/levelOfIndirection.svg
-  //-         .white.z-1.text-shadow.text-6 Level of Indirection
-  //- +slide
-  //-   +title The CSS ZenGarden Phallacy
-  //-   .fla.flcnw.flc 
-  //-     .fln Not because you can mean you should
-  //-     .fln Believe me, I know
-  //-   .notes
-  //-     li rebranding the whole wbeiste just by changing the CSS
-  //-     li never happens in real life
-  //-     li slow, too complex
-  //-     li we always add wrapper divs or rewrite markup
 
 
 
